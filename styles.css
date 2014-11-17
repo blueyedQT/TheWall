@@ -1,0 +1,39 @@
+* {
+
+}
+body {
+	width: 970px;
+}
+h1 {
+	display: inline-block; 
+	width: 600px;
+}
+.header {
+	display: inline-block;
+	width: 200px;
+}
+.button {
+	margin-left: 700px;
+	margin-top: 10px;
+}
+h2 {
+
+}
+textarea {
+	width: 950px;
+	height: 100px;
+	display: block;
+	border: 2px solid black;
+}
+.message {
+	min-height: 100px;
+	display: block;
+	border: 1px solid black;
+	margin: 10px;
+}
+.comment {
+	min-height: 50px;
+	display: block;
+	border: 1px dotted red;
+	margin: 5px 0px 5px 25px;
+}
