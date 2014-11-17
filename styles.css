@@ -4,6 +4,15 @@
 body {
 	width: 970px;
 }
+form {
+	width: 300px;
+	display: inline-block;
+	border: 2px solid black;
+	vertical-align: top;
+}
+.red {
+	color: red;
+}
 h1 {
 	display: inline-block; 
 	width: 600px;
@@ -11,6 +20,13 @@ h1 {
 .header {
 	display: inline-block;
 	width: 200px;
+}
+/*Can combine submit and header into a button class most likely
+*/
+.submit {
+	display: block;
+	background-color: green;
+	color: white;
 }
 .button {
 	margin-left: 700px;

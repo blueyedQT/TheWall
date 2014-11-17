@@ -1,3 +1,12 @@
+<?php 
+session_start();
+var_dump($_SESSION);
+// if(empty($_SESSION['user'])) {
+// 	$_SESSION['user'] = $_GET['id'];
+// } else {
+// }
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +16,7 @@
 </head>
 <body>
 	<h1>CodingDojo Wall</h1>
-	<p class="header">Welcome Michael</p>
+	<p class="header">Welcome <?= $_SESSION['first_name'] ?></p>
 	<a href="#">Logout</a>
 	<h2>Post a message</h2>
 	<textarea></textarea>
