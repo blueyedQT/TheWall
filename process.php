@@ -2,11 +2,11 @@
 session_start();
 require ('connection.php');
 
-echo 'This is my session info:';
-var_dump($_SESSION);
+// echo 'This is my session info:';
+// var_dump($_SESSION);
 
-echo 'This is my post info';
-var_dump($_POST);
+// echo 'This is my post info';
+// var_dump($_POST);
 
 $_SESSION['messages'] = array();
 $errors = 0;
@@ -34,7 +34,7 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 				  VALUES ('".$_POST['first_name']."', '".$_POST['last_name']."', '".$_POST['email']."', '".$pass."', NOW(), NOW())";
 		$result = run_mysql_query($query);
 		if($result>0) {
-			$_SESSION['messages'][] = 'You have sucessfully registered!';
+			$_SESSION['first_name'] = $_POST['first_name'];
 			header('location: wall.php');
 			exit;
 		}
@@ -63,10 +63,47 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 			}
 		} else {
 			$_SESSION['message'] = 'Invalid email/password combination, try again';
-			// header('location: index.php');
-			// exit;
+			header('location: index.php');
+			exit;
 		}
 	}
-	// header('location: index.php');
+	header('location: index.php');
+
+} elseif (isset($_GET['logout'])) {
+	$_SESSION['messages'][] = 'You have logged out.';
+	header('location: index.php');
+	exit;
+
+} elseif(!empty($_POST['action']) && $_POST['action'] == 'message') {
+	if(strlen($_POST['mess'])> 0) {
+		$query = "INSERT INTO messages (user_id, message, created_at, updated_at)
+				  VALUES ('".$_SESSION['user_id']."', '".$_POST['mess']."', NOW(), NOW())";
+		$result = run_mysql_query($query);
+		if($result != 0) {
+			echo 'Your message was posted!';
+		} else {
+			echo 'There was an error...';
+		}
+	} else {
+		$_SESSION['messages'][] = 'You did not enter a vaild message.';
+		header('location: wall.php');
+		exit;
+	}
+
+} elseif(!empty($_POST['action']) && $_POST['action'] == 'comment') {
+	var_dump($_GET);
+	if(strlen($_POST['comment'])>0) {
+		$query = "INSERT INTO comments (message_id, user_id, comment, created_at, updated_at)
+				  VALUES ('".$_POST['mid']."', '".$_SESSION['user_id']."', '".$_POST['comment']."', NOW(), NOW())";
+		$result = run_mysql_query($query);
+		if($result != 0) {
+			// echo 'Your comment was posted!';
+			unset($_SESSION['message_id']);
+			header('location: wall.php');
+			exit;
+		} else {
+			echo 'There was an error...';
+		}
+	}
 }
 ?>

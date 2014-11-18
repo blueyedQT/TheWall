@@ -5,6 +5,9 @@ body {
 	width: 970px;
 }
 form {
+	background-color: lightgreen;
+}
+form.index {
 	width: 300px;
 	display: inline-block;
 	border: 2px solid black;
@@ -35,6 +38,10 @@ h1 {
 h2 {
 
 }
+.wall {
+	display: block;
+	border: none;
+}
 textarea {
 	width: 950px;
 	height: 100px;
@@ -52,4 +59,8 @@ textarea {
 	display: block;
 	border: 1px dotted red;
 	margin: 5px 0px 5px 25px;
+}
+.commentText {
+	width: 920px;
+	margin: 5px 0 5px 25px;
 }

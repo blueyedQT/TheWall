@@ -16,7 +16,7 @@ var_dump($_SESSION);
 			echo '<p class="red">' . $message . '</p>';
 		}
 	} ?>
-	<form action="process.php" method="post">
+	<form class="index" action="process.php" method="post">
 		<h1>Register</h1>
 		<input type="text" name="first_name" placeholder="First Name">
 		<input type="text" name="last_name" placeholder="Last Name">
@@ -27,7 +27,7 @@ var_dump($_SESSION);
 		<input class="submit" type="submit" name="submit" value="Register Me!">
 	</form>
 
-	<form action="process.php" method="post">
+	<form class="index" action="process.php" method="post">
 		<h1>Login</h1>
 		<input type="text" name="email" placeholder="Email Address">
 		<input type="password" name="password" placeholder="Password">
