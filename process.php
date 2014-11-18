@@ -23,10 +23,16 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 		$errors++;
 	}
 	if($errors == 0) {
+		$fn = escape_this_string($_POST['first_name']);
+		$ln = escape_this_string($_POST['last_name']);
+		$em = escape_this_string($_POST['email']);
+
 		$salt = bin2hex(openssl_random_pseudo_bytes(22));
-		$hash = crypt($_POST['password'], $salt);
+		$pass = escape_this_string($_POST['password']);
+		$hash = crypt($pass, $salt);
+
 		$query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) 
-				  VALUES ('".$_POST['first_name']."', '".$_POST['last_name']."', '".$_POST['email']."', '".$hash."', NOW(), NOW())";
+				  VALUES ('".$fn."', '".$ln."', '".$em."', '".$hash."', NOW(), NOW())";
 		$result = run_mysql_query($query);
 		if($result>0) {
 			$user_id = $result;
@@ -60,7 +66,6 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 				header('location: wall.php?id='.$result['id']);
 				exit;
 			} else {
-				$_SESSION['logErr'][] = crypt($_POST['password'], $result['password']);
 				$_SESSION['logErr'][] = 'Invalid email and password combination, please try again';
 			}
 		}
@@ -75,8 +80,9 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 
 } elseif(!empty($_POST['action']) && $_POST['action'] == 'message') {
 	if(strlen($_POST['mess'])> 0) {
+		$msg = escape_this_string($_POST['mess']);
 		$query = "INSERT INTO messages (user_id, message, created_at, updated_at)
-				  VALUES ('".$_SESSION['user_id']."', '".$_POST['mess']."', NOW(), NOW())";
+				  VALUES ('".$_SESSION['user_id']."', '".$msg."', NOW(), NOW())";
 		$result = run_mysql_query($query);
 		if($result == 0) {
 			$_SESSION['errors'][] = 'There was an error, please try again';
@@ -89,8 +95,9 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 
 } elseif(!empty($_POST['action']) && $_POST['action'] == 'comment') {
 	if(strlen($_POST['comment'])>0) {
+		$com = escape_this_string($_POST['comment']);
 		$query = "INSERT INTO comments (message_id, user_id, comment, created_at, updated_at)
-				  VALUES ('".$_POST['mid']."', '".$_SESSION['user_id']."', '".$_POST['comment']."', NOW(), NOW())";
+				  VALUES ('".$_POST['mid']."', '".$_SESSION['user_id']."', '".$com."', NOW(), NOW())";
 		$result = run_mysql_query($query);
 		if($result != 0) {
 			unset($_SESSION['message_id']);
