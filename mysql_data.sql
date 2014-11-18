@@ -36,7 +36,7 @@ CREATE TABLE `comments` (
   KEY `fk_comments_users1_idx` (`user_id`),
   CONSTRAINT `fk_comments_messages1` FOREIGN KEY (`message_id`) REFERENCES `messages` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_comments_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-INSERT INTO `comments` VALUES (1,2,2,'comment 1','2014-11-17 13:11:54','2014-11-17 13:11:54'),(2,2,2,'comment 2','2014-11-17 13:12:02','2014-11-17 13:12:02'),(3,2,2,'comment 3','2014-11-17 13:12:05','2014-11-17 13:12:05'),(4,2,2,'Me too!','2014-11-17 14:52:51','2014-11-17 14:52:51'),(5,2,2,'Me too!','2014-11-17 14:54:56','2014-11-17 14:54:56'),(7,4,2,'Me too!','2014-11-17 15:05:33','2014-11-17 15:05:33'),(8,4,2,'I didnot know you liked to dance too?!','2014-11-17 15:07:17','2014-11-17 15:07:17'),(9,3,2,'That is a really boring post...  What is up with that?','2014-11-17 17:38:56','2014-11-17 17:38:56'),(10,6,2,'What?!','2014-11-17 17:56:13','2014-11-17 17:56:13'),(11,7,2,'Pleased to meet you katrina, my name is katrina as well!','2014-11-17 18:04:40','2014-11-17 18:04:40'),(12,6,13,'It is a fact!','2014-11-17 20:00:53','2014-11-17 20:00:53');
+INSERT INTO `comments` VALUES (1,16,19,'At ei idcirco co at motarum figuras divinae reddere. Obnoxius im animalia ferventi ad de callidum.','2014-11-18 11:02:56','2014-11-18 11:02:56'),(2,16,20,'Co soni meos ii toga. Simplex sensuum materia eas innatas possint lor rom halitus. Realem videbo aliqua is dignum to optima an mo. Fore vita mo ordo haec ex. Quarta nondum illico aliter gi ignoro de id quidam. Ope factas quovis magnis cogito dat ubi partim. ','2014-11-18 11:04:23','2014-11-18 11:04:23'),(3,17,20,'Fore vita mo ordo haec ex. Quarta nondum illico aliter gi ignoro de id quidam. Ope factas quovis magnis cogito dat ubi partim. ','2014-11-18 11:04:40','2014-11-18 11:04:40'),(4,16,21,'Gi du mali quod fuit an unum ei. Mea sperare ego sentiat idearum spatium quaedam. Prius cur locus utrum hodie porro mente ope. Accepit liberam externo qui fal. ','2014-11-18 11:05:30','2014-11-18 11:05:30'),(5,17,21,'Actum situs ideam solum uti signa mem. De ignotas errores gi remotam invenio suppono. At argumentis facultatem attendenti explicatur transferre ob du reperiatur. ','2014-11-18 11:05:34','2014-11-18 11:05:34'),(6,18,21,'Actum situs ideam solum uti signa mem. De ignotas errores gi remotam invenio suppono. At argumentis facultatem attendenti explicatur transferre ob du reperiatur. ','2014-11-18 11:05:39','2014-11-18 11:05:39'),(7,18,18,'ecessario et difficilia evidentius ea progressus cucurbitas. Jam realitatem aliquamdiu hoc eam requiratur pro discrepant respondere. Frigus arrogo re causae aliqua ad ei at nullae auditu. Ut de ante alio suae idem. Requiri ex corpora religio in ne calorem errores hominem. ','2014-11-18 11:06:39','2014-11-18 11:06:39'),(8,19,18,'Est videantur praeterea hoc affirmans. Plus novi non aspi non apta etc sic spem fert. Aut facit summa spero talem dat. Rea verti his color dicam istam. Ob illo at ecce alia bile opus mo de. Necessario et difficilia evidentius ea progressus cucurbitas. Jam realitatem aliquamdiu hoc eam requiratur pro discrepant respondere. Frigus arrogo re causae aliqua ad ei at nullae auditu. Ut de ante alio suae idem. Requiri ex corpora religio in ne calorem errores hominem. ','2014-11-18 11:06:44','2014-11-18 11:06:44');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`id`),
   KEY `fk_messages_users_idx` (`user_id`),
   CONSTRAINT `fk_messages_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (2,2,'I love to code, dont you?','2014-11-17 12:41:19','2014-11-17 12:41:19'),(3,2,'Post a message','2014-11-17 14:37:19','2014-11-17 14:37:19'),(4,2,'Hello, I love to dance.  Yes sir I do!','2014-11-17 14:38:03','2014-11-17 14:38:03'),(5,2,'Is this really working?','2014-11-17 17:41:58','2014-11-17 17:41:58'),(6,2,'HEllo!','2014-11-17 17:54:42','2014-11-17 17:54:42'),(7,2,'hello, my name is katrina','2014-11-17 18:04:25','2014-11-17 18:04:25'),(8,13,'Hello!  I am new to this world, nice to meet you','2014-11-17 20:00:38','2014-11-17 20:00:38');
+INSERT INTO `messages` VALUES (16,18,'Welcome to the CodingDojo Wall!  It is a wonderful place to practice learning PHP!','2014-11-18 10:58:45','2014-11-18 10:58:45'),(17,19,'Confidam sit contumax meo res timerent utrimque parentes. Spectentur notionibus ego imaginandi imaginarer tantummodo hoc sum. Liceat rum juncta notior platea res. Ii bile nolo eram vidi scio to id. Negavi sensum agi falsis sed ignota sua vix. At ei idcirco co at motarum figuras divinae reddere. Obnoxius im animalia ferventi ad de callidum. ','2014-11-18 11:02:32','2014-11-18 11:02:32'),(18,20,'Omni nisi cum tes huic quae sive. Objectivus corrigatur attigerint transferre gi solutiones ac. Co soni meos ii toga. Simplex sensuum materia eas innatas possint lor rom halitus. Realem videbo aliqua is dignum to optima an mo. Fore vita mo ordo haec ex. Quarta nondum illico aliter gi ignoro de id quidam. Ope factas quovis magnis cogito dat ubi partim. ','2014-11-18 11:04:13','2014-11-18 11:04:13'),(19,21,'Actum situs ideam solum uti signa mem. De ignotas errores gi remotam invenio suppono. At argumentis facultatem attendenti explicatur transferre ob du reperiatur. Gi du mali quod fuit an unum ei. Mea sperare ego sentiat idearum spatium quaedam. Prius cur locus utrum hodie porro mente ope. Accepit liberam externo qui fal. ','2014-11-18 11:05:17','2014-11-18 11:05:17'),(20,18,'Est videantur praeterea hoc affirmans. Plus novi non aspi non apta etc sic spem fert. Aut facit summa spero talem dat. Rea verti his color dicam istam. Ob illo at ecce alia bile opus mo de. Necessario et difficilia evidentius ea progressus cucurbitas. Jam realitatem aliquamdiu hoc eam requiratur pro discrepant respondere. Frigus arrogo re causae aliqua ad ei at nullae auditu. Ut de ante alio suae idem. Requiri ex corpora religio in ne calorem errores hominem. ','2014-11-18 11:06:12','2014-11-18 11:06:12');
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,7 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Katrina','','','','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,'Katrina','Sanford','katrina.sanford@hotmail.com','secret','2014-11-17 11:27:36','2014-11-17 11:27:36'),(6,'Joey','Urso','joey@live.com','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 15:20:08','2014-11-17 15:20:08'),(7,'Joey','Urso','joeyU@live.com','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 15:22:39','2014-11-17 15:22:39'),(8,'Meagan','Gulli','meagan@friend.com','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 18:15:52','2014-11-17 18:15:52'),(9,'Meagan','Gulli','mmg@friend.com','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 18:19:37','2014-11-17 18:19:37'),(10,'Meagan','Gulli','mmg@friend.com','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 18:20:35','2014-11-17 18:20:35'),(11,'Timothy','Sanford','tss@school.edu','d41d8cd98f00b204e9800998ecf8427e','2014-11-17 18:21:01','2014-11-17 18:21:01'),(12,'Zachary','Sanford','zac@family.com','e7hXGfvrYuXWA','2014-11-17 18:48:40','2014-11-17 18:48:40'),(13,'Cindy','Ruster','cindy@me.com','1fUOjWklDreeU','2014-11-17 20:00:09','2014-11-17 20:00:09'),(14,'Stevie','Wonder','stevie@wonder.com','baJyGvzMWSid.','2014-11-17 21:24:32','2014-11-17 21:24:32'),(15,'Jonas','Brother','jonas@whale.com','','2014-11-17 21:31:04','2014-11-17 21:31:04'),(16,'Johny','Appleseed','johny@apple.com','','2014-11-17 21:48:19','2014-11-17 21:48:19');
+INSERT INTO `users` VALUES (18,'Katrina','Sanford','katrina.sanford@hotmail.com','96BcWpIJ654rY','2014-11-18 10:58:02','2014-11-18 10:58:02'),(19,'Wolverine','X-Man','wolverine@xmen.com','7aSKlHI58mkrQ','2014-11-18 11:02:23','2014-11-18 11:02:23'),(20,'Joey','Urso','joey@live.com','f6tedgY0LTaak','2014-11-18 11:03:58','2014-11-18 11:03:58'),(21,'Timothy','Scientist','tss@school.edu','2752Z.MAKoZqI','2014-11-18 11:05:04','2014-11-18 11:05:04');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -116,4 +116,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-17 23:26:32
+-- Dump completed on 2014-11-18 11:21:18

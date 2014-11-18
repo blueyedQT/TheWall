@@ -5,11 +5,6 @@ require ('connection.php');
 $_SESSION['regErr'] = array();
 $errors = 0;
 
-$encpass = password_hash("secret", PASSWORD_DEFAULT);
-echo 'This is the hash: ' .$encpass. '<br>';
-
-var_dump(password_verify('secret', $encpass));
-
 if(isset($_POST['action']) && $_POST['action'] == "register") {
 	if(is_numeric($_POST['first_name']) || strlen($_POST['first_name'])<3) {
 		$_SESSION['regErr'][] = "Please enter a vaild first name";
@@ -105,5 +100,10 @@ if(isset($_POST['action']) && $_POST['action'] == "register") {
 			$_SESSION['errors'][] = 'There was an error, please try again';
 		}
 	}
+} elseif(!empty($_GET['mid'])) {
+	$query = "DELETE FROM messages WHERE id=".$_GET['mid']."";
+	$result = run_mysql_query($query);
+	header('location: wall.php');
+	exit;
 }
 ?>

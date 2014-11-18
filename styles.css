@@ -44,12 +44,12 @@ input.index {
 	margin: 20px auto;
 	height: 25px;
 }
-
-
 p.red {
 	color: red;
 	font-size: 75%;
 }
+
+/*Styling that is for wall.php only*/
 .headerText {
 	display: inline-block;
 	width: 200px;
@@ -66,14 +66,13 @@ h2 {
 	background-color: darkblue;
 	color: white;
 	padding: 5px;
-
 }
 .wall {
 	display: block;
 	border: none;
 }
 textarea {
-	width: 950px;
+	width: 966px;
 	height: 100px;
 	display: block;
 	border: 2px solid black;
@@ -82,9 +81,6 @@ textarea {
 input.posts {
 	margin: 20px 20px 20px 800px;
 }
-
-
-
 h3 {
 	background-color: darkblue;
 	color: white;
@@ -94,8 +90,7 @@ h3 {
 .message {
 	min-height: 100px;
 	display: block;
-/*	border: 1px solid black;*/
-	margin: 10px;
+/*	margin: 10px;*/
 }
 p {
 	margin: 10px;
